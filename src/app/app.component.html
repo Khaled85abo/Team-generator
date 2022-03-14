@@ -31,10 +31,11 @@
     <button (click)="addMember()">Add</button>
   </div>
   <div class="generate">
+    <h5>Members per team</h5>
     <input
       type="number"
-      placeholder="Number of teams"
-      [(ngModel)]="teamsNumbers"
+      placeholder="Members per team"
+      [(ngModel)]="membersPerTeam"
       (keydown)="generateKeyDown($event)"
     />
     <button (click)="generate()">Generate</button>

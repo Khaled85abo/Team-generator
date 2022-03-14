@@ -35,7 +35,7 @@ export class AppComponent {
     'Julia',
   ];
   member: string = '';
-  teamsNumbers: number = 1;
+  membersPerTeam: number = 1;
   inputError: string | null = null;
   generateError: string | null = null;
   teams: string[][] = [];
@@ -73,16 +73,16 @@ export class AppComponent {
     if (event.code === 'Enter') this.generate();
   }
   generate() {
-    console.log(this.members.length, this.teamsNumbers);
-    if (this.members.length < this.teamsNumbers) {
-      this.generateError = "Can't generate more teams than members";
+    console.log(this.members.length, this.membersPerTeam);
+    if (this.members.length < this.membersPerTeam) {
+      this.generateError = "There aren't enough members";
     }
     const newMembersArr = [...this.members];
-    const teams = Math.floor(this.members.length / this.teamsNumbers);
+    const teams = Math.floor(this.members.length / this.membersPerTeam);
     const teamsArray = [];
     for (let i = 0; i < teams; i++) {
       const team: string[] = [];
-      for (let i = 0; i < this.teamsNumbers; i++) {
+      for (let i = 0; i < this.membersPerTeam; i++) {
         const randomIndex = Math.floor(Math.random() * newMembersArr.length);
         team.push(newMembersArr[randomIndex]);
         newMembersArr.splice(randomIndex, 1);
