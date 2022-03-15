@@ -1,3 +1,5 @@
+// https://github.com/harblaith7/Angular-Crash-Course
+
 import {
   trigger,
   state,
@@ -99,4 +101,32 @@ export class AppComponent {
     console.log(teamsArray);
     this.teams = teamsArray;
   }
+
+  // generateTeams() {
+  //   this.teams = [];
+  //   const allMembers = [...this.members];
+
+  //   if (this.members.length < this.numberOfTeams) {
+  //     this.errorMessage = 'Not enough members';
+  //     return;
+  //   }
+
+  //   this.errorMessage = '';
+
+  //   while (allMembers.length) {
+  //     for (let i = 0; i < this.numberOfTeams; i++) {
+  //       const randomIndex = Math.floor(Math.random() * allMembers.length);
+  //       const member = allMembers.splice(randomIndex, 1)[0];
+  //        if(!member) breake;
+  //       if (this.teams[i]) {
+  //         this.teams[i].push(member);
+  //       } else {
+  //         this.teams[i] = [member];
+  //       }
+  //     }
+  //   }
+
+  //   this.members = [];
+  //   this.numberOfTeams = '';
+  // }
 }
